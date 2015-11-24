@@ -5,12 +5,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 	has_many :exercises
-
-	validates :first_name, presence: true
+  validates :first_name, presence: true
 	validates :last_name, presence: true
-
+  has_many :friendships
+	has_many :friends, through: :friendships,class_name: "User"
 	self.per_page = 10
-	
+
 	def full_name
 		"#{first_name} #{last_name}"
 	end
@@ -25,4 +25,21 @@ class User < ActiveRecord::Base
 		"%#{names_array[0]}%","%#{names_array[1]}%","%#{names_array[0]}%","%#{names_array[1]}%").order(:first_name)
 	end
 end
+
+def follows_or_same?(new_friend)
+	 friendships.map(&:freind).include?(new_friend) || self == new_friend
+ end
+
 end
+
+
+
+
+
+
+
+
+
+
+
+

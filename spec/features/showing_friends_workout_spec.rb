@@ -2,7 +2,7 @@ require "rails_helper"
 RSpec.feature "Showing Friend Workout" do
 before do
 @amala = User.create(first_name: "Amala", last_name: "Nivas", email: "amalarails@gmail.com", password: "123456789")
-@amu = User.create(first_name: "Naga", last_name: "Amala", email: "amala.b@gmail.com", password: "123456789")
+	@amu = User.create(first_name: "Naga", last_name: "Amala", email: "naga.dasari@hbo.com", password: "123456789")
 @e1 = @amala.exercises.create(duration_in_min: 74, workout: "Weight lifting routine",
 workout_date: Date.today)
 @e2 = @amu.exercises.create(duration_in_min: 55, workout: "Naga's weight lifting routine",

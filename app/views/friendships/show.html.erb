@@ -17,8 +17,6 @@
 				<td><%= exercise.duration_in_min %></td>
 				<td><%= truncate(exercise.workout,length: 100) %></td>
 				<td><%= exercise.workout_date %></td>
-				<td><%= link_to "Destroy", [current_user, exercise], method: :delete,
-          data:{ confirm: "Are you sure?"} %></td>
 			</tr>
 			<%end%>
 		</tbody>

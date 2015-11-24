@@ -13,6 +13,6 @@ RSpec.feature "Unfollow Friend" do
 		link = "a[href='/friendships/#{@following.id}'][data-method='delete']"
 		find(link).click
 
-		expect(page).to have_content(@amu.full_name + "unfollowed")
+		expect(page).to have_content(@amu.full_name + " unfollowed")
 	end
 end
